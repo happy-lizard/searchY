@@ -29,6 +29,14 @@ def search_and_display():
     # Replace spaces with +
     query = input("Enter search query: ").replace(" ", "+")
 
+    print("Searching", end='', flush=True)
+    for _ in range(5):  # You can adjust the number of iterations for the progress animation
+        time.sleep(0.5)
+        print("/|\\", end='', flush=True)
+        time.sleep(0.5)
+        print("\|/", end='', flush=True)
+    print("\n")
+
     # Set Firefox to run in headless mode
     firefox_options = Options()
     firefox_options.add_argument('--headless')
